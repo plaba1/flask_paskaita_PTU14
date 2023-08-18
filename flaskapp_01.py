@@ -10,6 +10,12 @@ def home():
 def user(kintamasis):
     return f'sveiki {kintamasis} atvyke Flask puslapi'
 
+
+@app.route('/orai')
+def orai():
+    return '<h1>orai aiskiai per karsti<h1>'
+
+
 if __name__ == '__main__':
     app.run()
 
