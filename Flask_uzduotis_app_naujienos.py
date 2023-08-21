@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import sys
 
 app = Flask(__name__)
 
@@ -41,4 +42,8 @@ def ciklas():
     return render_template("ciklas.html")
 
 if __name__ == '__main__':
-    app.run()
+    if len(sys.argv) == 2:
+        port = int(sys.argv[1])
+    else:
+        port = 5000
+    app.run(host='0.0.0.0', port=port)
